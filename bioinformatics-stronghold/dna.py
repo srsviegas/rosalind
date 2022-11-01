@@ -10,6 +10,6 @@ def count_molecules(dna_string):
 
 
 if __name__ == "__main__":
-    with open("bioinformatics-stronghold\dna.txt", "r") as dataset:
+    with open("dna.txt", "r") as dataset:
         n_molecules = count_molecules(dataset.readline())
     print(*n_molecules)
