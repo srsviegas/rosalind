@@ -14,10 +14,10 @@ def reverse_complement(dna_string):
         'A': 'T', 'T': 'A',
         'C': 'G', 'G': 'C'
     }
-    compl_string = ""
-    for symbol in dna_string:
-        compl_string += complement[symbol]
-    return compl_string[::-1]
+    revc_string = ""
+    for symbol in reversed(dna_string):
+        revc_string += complement[symbol]
+    return revc_string
 
 
 if __name__ == "__main__":
