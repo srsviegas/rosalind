@@ -21,6 +21,6 @@ def reverse_complement(dna_string):
 
 
 if __name__ == "__main__":
-    with open("revc_in.txt", "r") as dataset:
+    with open("revc-in.txt", "r") as dataset:
         revc = reverse_complement(dataset.readline())
     print(revc)

@@ -14,7 +14,7 @@ from itertools import permutations
 if __name__ == "__main__":
     lenght = int(input())
     perm_list = list(permutations(range(1, lenght+1)))
-    with open("perm_out.txt", "w") as output:
+    with open("perm-out.txt", "w") as output:
         output.write(f'{len(perm_list)}')
         for perm in perm_list:
             output.write('\n')

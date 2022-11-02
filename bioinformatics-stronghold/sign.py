@@ -21,7 +21,7 @@ def signed_permutations(n):
 if __name__ == "__main__":
     lenght = int(input())
     perm_list = signed_permutations(lenght)
-    with open("sign_out.txt", "w") as output:
+    with open("sign-out.txt", "w") as output:
         output.write(f"{len(perm_list)}")
         for perm in perm_list:
             output.write('\n')

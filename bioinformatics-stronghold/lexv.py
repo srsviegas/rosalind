@@ -23,10 +23,10 @@ def form_strings(string, n):
 
 
 if __name__ == "__main__":
-    with open("lexv_in.txt", "r") as dataset:
+    with open("lexv-in.txt", "r") as dataset:
         alphabet = dataset.readline().split()
         lenght = int(dataset.read(1))
         str_list = form_strings(alphabet, lenght)
-    with open("lexv_out.txt", "w") as output:
+    with open("lexv-out.txt", "w") as output:
         for string in str_list:
             output.write(f'{string}\n')

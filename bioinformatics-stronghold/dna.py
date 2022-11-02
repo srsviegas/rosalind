@@ -10,6 +10,6 @@ def count_symbols(dna_string):
 
 
 if __name__ == "__main__":
-    with open("dna_in.txt", "r") as dataset:
+    with open("dna-in.txt", "r") as dataset:
         symbols = count_symbols(dataset.readline())
     print(*symbols)

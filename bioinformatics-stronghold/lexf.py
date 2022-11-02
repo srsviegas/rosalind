@@ -13,12 +13,12 @@ from itertools import product
 
 
 if __name__ == "__main__":
-    with open("lexf_in.txt", "r") as dataset:
+    with open("lexf-in.txt", "r") as dataset:
         alphabet = dataset.readline().split()
         lenght = int(dataset.readline())
 
     strings_formed = product(alphabet, repeat=lenght)
 
-    with open("lexf_out.txt", "w") as output:
+    with open("lexf-out.txt", "w") as output:
         for string in strings_formed:
             output.write(f"{''.join(string)}\n")
