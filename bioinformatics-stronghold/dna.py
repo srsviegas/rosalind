@@ -5,11 +5,11 @@ Return: Four integers (separated by spaces) counting the respective number of ti
 """
 
 
-def count_molecules(dna_string):
+def count_symbols(dna_string):
     return map(dna_string.count, "ACGT")
 
 
 if __name__ == "__main__":
     with open("dna_in.txt", "r") as dataset:
-        n_molecules = count_molecules(dataset.readline())
-    print(*n_molecules)
+        symbols = count_symbols(dataset.readline())
+    print(*symbols)
