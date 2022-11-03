@@ -9,11 +9,13 @@ Return: The reverse complement sc of s.
 """
 
 
+complement = {
+    'A': 'T', 'T': 'A',
+    'C': 'G', 'G': 'C'
+}
+
+
 def reverse_complement(dna_string):
-    complement = {
-        'A': 'T', 'T': 'A',
-        'C': 'G', 'G': 'C'
-    }
     revc_string = ""
     for symbol in reversed(dna_string):
         revc_string += complement[symbol]
