@@ -12,6 +12,6 @@ def transcribe(dna_string):
 
 
 if __name__ == "__main__":
-    with open("rna-in.txt", "r") as dataset:
+    with open("in\\rna.txt", "r") as dataset:
         rna = transcribe(dataset.readline())
     print(rna)

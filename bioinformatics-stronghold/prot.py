@@ -44,6 +44,6 @@ def translate_rna(mrna_strand):
 
 
 if __name__ == "__main__":
-    with open("prot-in.txt", "r") as dataset:
+    with open("in\prot.txt", "r") as dataset:
         protein_string = translate_rna(dataset.readline())
     print(protein_string)

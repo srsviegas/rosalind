@@ -10,18 +10,18 @@ such permutations (you may list the signed permutations in any order).
 """
 
 
-from itertools import permutations
+from itertools import permutations, chain
 
 
 def signed_permutations(n):
-    perm_list = permutations(range(-n, 0) + range(1, n+1), n)
+    perm_list = permutations(chain(range(-n, 0), range(1, n+1)), n)
     return [p for p in perm_list if len(set(map(abs, p))) == n]
 
 
 if __name__ == "__main__":
     lenght = int(input())
     perm_list = signed_permutations(lenght)
-    with open("sign-out.txt", "w") as output:
+    with open("out\sign.txt", "w") as output:
         output.write(f"{len(perm_list)}")
         for perm in perm_list:
             output.write('\n')

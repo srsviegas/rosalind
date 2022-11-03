@@ -13,6 +13,6 @@ def hamming_distance(s, t):
 
 
 if __name__ == "__main__":
-    with open("hamm-in.txt", "r") as dataset:
+    with open("in\hamm.txt", "r") as dataset:
         hamm_dist = hamming_distance(*dataset.readlines())
     print(hamm_dist)
