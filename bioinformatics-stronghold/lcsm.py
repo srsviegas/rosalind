@@ -14,7 +14,7 @@ def lcsubs(dna_strings):
     for start in range(len(first)+1):
         for end in range(len(first), 0, -1):
             if (len(first[start:end]) > len(longest_c) and
-                all(map(lambda s: first[start:end] in s, dna_strings))):
+                all(first[start:end] in s for s in dna_strings)):
                 longest_c = first[start:end]
     return longest_c
 
