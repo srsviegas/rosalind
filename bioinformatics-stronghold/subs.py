@@ -18,7 +18,7 @@ def subs_positions(string, substring):
 if __name__ == "__main__":
     with open("in\subs.txt", "r") as dataset:
         dataset = dataset.readlines()
-    positions = subs_positions(dataset[0], dataset[1])
+    positions = subs_positions(dataset[0][:-1], dataset[1][:-1])
     with open("out\subs.txt", "w") as output:
         for p in positions:
             output.write(f'{p} ')
