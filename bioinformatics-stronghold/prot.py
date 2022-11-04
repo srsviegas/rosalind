@@ -15,25 +15,27 @@ Return: The protein string encoded by s.
 from textwrap import wrap
 
 
+codon_table = {
+    "UUC":"F", "CUC":"L", "AUC":"I", "GUC":"V",
+    "UUA":"L", "CUA":"L", "AUA":"I", "GUA":"V",
+    "UUG":"L", "CUG":"L", "AUG":"M", "GUG":"V",
+    "UCU":"S", "CCU":"P", "ACU":"T", "GCU":"A",
+    "UUU":"F", "CUU":"L", "AUU":"I", "GUU":"V",
+    "UCC":"S", "CCC":"P", "ACC":"T", "GCC":"A",
+    "UCA":"S", "CCA":"P", "ACA":"T", "GCA":"A",
+    "UCG":"S", "CCG":"P", "ACG":"T", "GCG":"A",
+    "UAU":"Y", "CAU":"H", "AAU":"N", "GAU":"D",
+    "UAC":"Y", "CAC":"H", "AAC":"N", "GAC":"D",
+    "UGU":"C", "CGU":"R", "AGU":"S", "GGU":"G",
+    "UGC":"C", "CGC":"R", "AGC":"S", "GGC":"G",
+    "UGG":"W", "CGG":"R", "AGG":"R", "GGG":"G", 
+    "CAA":"Q", "AAA":"K", "GAA":"E", "UAA":"Stop",
+    "CGA":"R", "AGA":"R", "GGA":"G", "UGA":"Stop",
+    "CAG":"Q", "AAG":"K", "GAG":"E", "UAG":"Stop"
+}
+
+
 def translate_rna(mrna_strand):
-    codon_table = {
-        "UUC":"F", "CUC":"L", "AUC":"I", "GUC":"V",
-        "UUA":"L", "CUA":"L", "AUA":"I", "GUA":"V",
-        "UUG":"L", "CUG":"L", "AUG":"M", "GUG":"V",
-        "UCU":"S", "CCU":"P", "ACU":"T", "GCU":"A",
-        "UUU":"F", "CUU":"L", "AUU":"I", "GUU":"V",
-        "UCC":"S", "CCC":"P", "ACC":"T", "GCC":"A",
-        "UCA":"S", "CCA":"P", "ACA":"T", "GCA":"A",
-        "UCG":"S", "CCG":"P", "ACG":"T", "GCG":"A",
-        "UAU":"Y", "CAU":"H", "AAU":"N", "GAU":"D",
-        "UAC":"Y", "CAC":"H", "AAC":"N", "GAC":"D",
-        "UGU":"C", "CGU":"R", "AGU":"S", "GGU":"G",
-        "UGC":"C", "CGC":"R", "AGC":"S", "GGC":"G",
-        "UGG":"W", "CGG":"R", "AGG":"R", "GGG":"G", 
-        "CAA":"Q", "AAA":"K", "GAA":"E", "UAA":"Stop",
-        "CGA":"R", "AGA":"R", "GGA":"G", "UGA":"Stop",
-        "CAG":"Q", "AAG":"K", "GAG":"E", "UAG":"Stop"
-        }
     protein_string = ""
     for codon in wrap(mrna_strand, 3):
         codon = codon_table[codon]
