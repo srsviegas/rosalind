@@ -16,7 +16,9 @@ def readfasta(filename):
     return [s.replace('\n', '') for s in strings[1:]]
 
 
-def search_uniprot(uniprot_id):
+def search_uniprot(uniprot_id, feedback=False):
     url = f"http://www.uniprot.org/uniprot/{uniprot_id}.fasta"
     response = requests.get(url).content.decode('utf-8')
+    if feedback:
+        print(f"{uniprot_id} received")
     return split('\n', response, 1)[1].replace('\n', '')
