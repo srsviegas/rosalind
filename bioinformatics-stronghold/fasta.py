@@ -19,7 +19,7 @@ def readfasta(filename, get_ids=False):
     strings = split('>.*\n', fasta_file)
     if get_ids:
         ids = findall('>.*\n', fasta_file)
-        return {id[:-1]:s.replace('\n', '') for id, s, in zip(ids, strings[1:])}
+        return {id[1:-1]:s.replace('\n', '') for id, s, in zip(ids, strings[1:])}
     else:
         return (s.replace('\n', '') for s in strings[1:])
 
